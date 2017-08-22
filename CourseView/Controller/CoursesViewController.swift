@@ -9,12 +9,35 @@
 import UIKit
 
 class CoursesViewController: UIViewController {
-
+    
+    @IBOutlet weak var chefCourseProps: UIButton!
+    @IBOutlet weak var popStarCourseProps: UIButton!
+    @IBOutlet weak var developerCourseProps: UIButton!
+    
+    var courses: [Course] = CourseStore.downloadNewCourses()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.updateUI()
     }
+    func updateUI() {
+        let chefCourse = courses[0]
+        chefCourseProps.setImage(chefCourse.buttonImage, for: [])
+        
+        let popStarCourse = courses[1]
+        popStarCourseProps.setImage(popStarCourse.buttonImage, for: [])
+        
+        let developerCourse = courses[2]
+        developerCourseProps.setImage(developerCourse.buttonImage, for: [])
+    }
+    
 
-
+    @IBAction func chefCourseButtonTapped(_ sender: UIButton) {
+    }
+    @IBAction func popStarCourseButtonTapped(_ sender: UIButton) {
+    }
+    @IBAction func developerCourseButtonTapped(_ sender: UIButton) {
+    }
+    
 }

@@ -24,21 +24,35 @@
                                 <rect key="frame" x="16" y="72" width="343" height="183"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="cover_chef"/>
+                                <connections>
+                                    <action selector="chefCourseButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TLI-H8-7Kg"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y2E-Ml-bRf">
                                 <rect key="frame" x="16" y="263" width="343" height="183"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="cover_chef"/>
+                                <connections>
+                                    <action selector="popStarCourseButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Aw7-0f-VQY"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQ8-9S-hsU">
                                 <rect key="frame" x="16" y="454" width="343" height="183"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="cover_chef"/>
+                                <connections>
+                                    <action selector="developerCourseButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rM9-kZ-79I"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.17254901960784313" green="0.21176470588235294" blue="0.56470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Course View" id="oAs-ji-bqY"/>
+                    <connections>
+                        <outlet property="chefCourseProps" destination="8tX-HO-kIs" id="y9a-9Q-2rk"/>
+                        <outlet property="developerCourseProps" destination="lQ8-9S-hsU" id="j4h-G2-NH7"/>
+                        <outlet property="popStarCourseProps" destination="y2E-Ml-bRf" id="BVk-52-6PA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
