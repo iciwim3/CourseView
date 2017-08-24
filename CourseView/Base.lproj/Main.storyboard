@@ -54,7 +54,9 @@
                         </subviews>
                         <color key="backgroundColor" red="0.17254901960784313" green="0.21176470588235294" blue="0.56470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Course View" id="oAs-ji-bqY"/>
+                    <navigationItem key="navigationItem" title="Course View" id="oAs-ji-bqY">
+                        <barButtonItem key="backBarButtonItem" title=" " id="Lv7-oS-qxK"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="chefCourseProps" destination="8tX-HO-kIs" id="y9a-9Q-2rk"/>
                         <outlet property="developerCourseProps" destination="lQ8-9S-hsU" id="j4h-G2-NH7"/>
@@ -92,6 +94,7 @@
                                         <state key="normal" image="play"/>
                                         <connections>
                                             <action selector="playButtonTapped:" destination="KOA-GG-MYx" eventType="touchUpInside" id="P6p-O2-lTC"/>
+                                            <segue destination="JgN-Si-pdp" kind="presentation" identifier="PlayVideoSegue" id="dMY-Xr-fVq"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Become a Swift Developer" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jh7-tj-1wl">
@@ -138,6 +141,42 @@
             </objects>
             <point key="canvasLocation" x="1156" y="138.98050974512745"/>
         </scene>
+        <!--Player View Controller-->
+        <scene sceneID="jkw-Fw-n41">
+            <objects>
+                <viewController id="JgN-Si-pdp" customClass="PlayerViewController" customModule="CourseView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Vhh-aR-REe"/>
+                        <viewControllerLayoutGuide type="bottom" id="6Q8-7a-Brg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uyu-w9-B1P">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jjk-5D-APw" customClass="YouTubePlayerView" customModule="CourseView" customModuleProvider="target">
+                                <rect key="frame" x="16" y="162" width="343" height="343"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlf-Rx-ac7">
+                                <rect key="frame" x="16" y="28" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="close"/>
+                                <connections>
+                                    <action selector="closeButtonTapped:" destination="JgN-Si-pdp" eventType="touchUpInside" id="K2f-cV-gPZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.17254901960784313" green="0.21176470588235294" blue="0.56470588235294117" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="youtubePlayerView" destination="jjk-5D-APw" id="LkK-C6-rM4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Uf-Ws-DgS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1868" y="138.98050974512745"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="7xp-Ff-Qzc">
             <objects>
@@ -146,6 +185,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="OeF-rF-70a">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.17254901960784313" green="0.21176470588235294" blue="0.56470588235294117" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
@@ -163,6 +203,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="close" width="15" height="15"/>
         <image name="cover_chef" width="373" height="204"/>
         <image name="developer" width="2432" height="3648"/>
         <image name="play" width="144" height="144"/>
